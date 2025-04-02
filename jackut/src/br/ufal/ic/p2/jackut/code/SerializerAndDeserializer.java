@@ -13,8 +13,22 @@ public class SerializerAndDeserializer {
      * Inicializa uma instância da classe utilitária de serialização/desserialização.
      * Este construtor não requer argumentos e serve como a instância padrão para a classe.
      */
-    public SerializerAndDeserializer() {
+    public SerializerAndDeserializer(String filePath) {
+        File file = new File(filePath);
 
+        try {
+            // Criar a pasta se não existir
+            if (file.getParentFile().mkdirs()) {
+                System.out.println("Pasta criada: " + file.getParentFile().getAbsolutePath());
+            }
+
+            // Criar o file
+            if (file.createNewFile()) {
+                System.out.println("Arquivo criado: " + file.getAbsolutePath());
+            }
+        } catch (IOException e) {
+            System.out.println("Erro ao criar arquivo ou pasta: " + e.getMessage());
+        }
     }
 
     /**

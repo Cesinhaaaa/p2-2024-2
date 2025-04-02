@@ -30,7 +30,9 @@ public class MessageManager implements Serializable {
      */
     public String read() throws NoMessageException {
         if (!this.messages.isEmpty()) {
-            return messages.removeFirst();
+            String message = this.messages.get(0);
+            this.messages.remove(0);
+            return message;
         } else {
             throw new NoMessageException();
         }

@@ -26,7 +26,7 @@ public abstract class SerializableData implements Serializable {
      */
     public SerializableData(String filePath) {
         this.filePath = filePath;
-        this.objSer = new SerializerAndDeserializer();
+        this.objSer = new SerializerAndDeserializer(filePath);
     }
 
     /**
