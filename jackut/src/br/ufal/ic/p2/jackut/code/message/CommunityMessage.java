@@ -7,8 +7,10 @@ import br.ufal.ic.p2.jackut.code.user.User;
  * Representa uma mensagem enviada para uma comunidade.
  * A mensagem é enviada a todos os membros da comunidade.
  */
-public class CommunityMessage extends Message {
+public class CommunityMessage implements Message {
+    private User sender;
     private Community community;
+    private String message;
 
     /**
      * Construtor da classe CommunityMessage.
@@ -18,14 +20,21 @@ public class CommunityMessage extends Message {
      * @param message o conteúdo da mensagem
      */
     public CommunityMessage(User sender, Community community, String message) {
-        super(sender, message);
+        this.sender = sender;
         this.community = community;
+        this.message = message;
     }
 
-    /**
-     * Envia a mensagem para todos os membros da comunidade.
-     * Cada membro recebe a mensagem através do método receiveCommunityMessage.
-     */
+    @Override
+    public String getMessage() {
+        return this.message;
+    }
+
+    @Override
+    public User getSender() {
+        return this.sender;
+    }
+
     @Override
     public void send() {
         for (User user : community.getMemberList()) {

@@ -5,8 +5,10 @@ import br.ufal.ic.p2.jackut.code.user.User;
 /**
  * Representa uma mensagem privada enviada de um usuário para outro.
  */
-public class PrivateMessage extends Message {
+public class PrivateMessage implements Message {
+    private User sender;
     private User receiver;
+    private String message;
 
     /**
      * Construtor da classe PrivateMessage.
@@ -16,14 +18,21 @@ public class PrivateMessage extends Message {
      * @param message o conteúdo da mensagem
      */
     public PrivateMessage(User sender, User receiver, String message) {
-        super(sender, message);
+        this.sender = sender;
         this.receiver = receiver;
+        this.message = message;
     }
 
-    /**
-     * Envia a mensagem privada para o destinatário.
-     * A entrega é feita através do método receivePrivateMessage do usuário receptor.
-     */
+    @Override
+    public String getMessage() {
+        return this.message;
+    }
+
+    @Override
+    public User getSender() {
+        return this.sender;
+    }
+
     @Override
     public void send() {
         receiver.receivePrivateMessage(this);
