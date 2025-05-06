@@ -1,0 +1,15 @@
+unnamed package
+br.ufal.ic.p2.jackut
+br.ufal.ic.p2.jackut.code
+br.ufal.ic.p2.jackut.code.community
+br.ufal.ic.p2.jackut.code.message
+br.ufal.ic.p2.jackut.code.persistence
+br.ufal.ic.p2.jackut.code.relations
+br.ufal.ic.p2.jackut.code.session
+br.ufal.ic.p2.jackut.code.user
+br.ufal.ic.p2.jackut.exceptions
+br.ufal.ic.p2.jackut.exceptions.community
+br.ufal.ic.p2.jackut.exceptions.login
+br.ufal.ic.p2.jackut.exceptions.message
+br.ufal.ic.p2.jackut.exceptions.relations
+br.ufal.ic.p2.jackut.exceptions.user
